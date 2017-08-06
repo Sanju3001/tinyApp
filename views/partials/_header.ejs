@@ -1,6 +1,58 @@
 
+
 <div>
 
-  <h1>Tiny App</h1>
+  <center><h1>Tiny App</h1></center>
 
 </div>
+
+
+
+
+
+  <% if (username) { %>
+
+   <center><p>You are logged in as: <%= username %> </p></center>
+
+   <center><form action="/logout" method="POST" style="margin:100px;">
+
+      <label for="logout">logout:</label>
+
+      <input type="submit" value="Logout">
+
+  </form></center>
+
+
+  <% }
+
+  else{ %>
+
+  <center>
+
+  <a style="padding: 20px" href="/login">Login Here</a>
+
+  <a style="padding: 20px" href="/register">Register Here</a>
+
+  </center>
+
+  <% } %>
+
+</div>
+
+
+
+<!--
+
+<center><form action="/login" method="POST" style="margin:100px;">
+
+      <label for="loginStep">Enter Login ID:</label>
+
+      <input id="username" type="text" name="username" style="width: 300px; height: 20px">
+
+      <input type="submit" value="Submit">
+
+  </form></center>
+
+-->
+
+
