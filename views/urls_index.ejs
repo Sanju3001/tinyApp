@@ -10,6 +10,7 @@
     p    {color: blue;}
     a    {color: green;}
   </style>
+
 </head>
 
 <body>
@@ -20,6 +21,7 @@
   </header>
 
 
+
   <h4> These are your URLs: </h4>
 
 
@@ -28,7 +30,7 @@
     <li>
     <form action="/urls/<%= key %>" method="POST" style="margin:10px;">
 
-    <div style="padding: 5px;"><%= key %> : <%= urls[key].longURL %></div>
+    <div style="padding: 5px;"><%= key %> : <a href="<%= urls[key].longURL %>"><%= urls[key].longURL %></a></div>
 
     <span style="padding:10px;">Update or delete your URLs:</span>
 

@@ -79,10 +79,27 @@ function urlsForUser(id) {
 
 // GET METHODS
 
-// Root welcome message
+// Root page
 app.get("/", (req, res) => {
 
-  res.end("Hello, welcome to the tinyApp!");
+  if(req.session.user_id) {
+
+    let myLinks = urlsForUser(req.session.user_id);
+
+    let templateVars = {
+      username: req.session.user_id,
+      urls: myLinks
+    };
+
+    res.render("urls_index", templateVars);
+
+  }
+
+  else {
+
+    res.redirect("/login");
+
+    }
 
 });
 
