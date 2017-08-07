@@ -1,49 +1,44 @@
 
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <title>TinyApp</title>
+  <style>
+    body {background-color: powderblue;}
+    h4   {color: blue;}
+    p    {color: blue;}
+  </style>
 </head>
-<body>
 
+<body>
 
   <header>
         <% include partials/_header %>
   </header>
 
+  <h4> Update your URLs here: </h4>
 
-  <ul><% for(var key in urls){ %>
+  <ol><% for(var key in urls){ %>
 
     <li>
 
-    <p> <% key %> : <%= longURL %> </p>
+    <form action="/urls/<%= key %>/update" method="POST" style="margin:20px;">
 
-    <form action="/urls/<%= key %>/delete" method="POST" style="margin:10px;">
-    <%= key %> : <%= urls[key].longURL %>
+      <div style="padding: 5px"><%= key %> : <%= urls[key].longURL %></div>
 
-    <span style="padding:10px;"><a href="urls/:id/update">Edit</a></span>
+      <input name="updatedURL" id="updatedURL" type="text" placeholder="http://"" style="width: 300px; height: 20px">
 
-    <span style="padding:10px;"><button>Delete</button></span>
+      <button style="background-color: yellow; width: 80px;height:25px"><strong>Update</strong></button>
 
     </form>
+
     </li>
 
     <% }; %>
 
-  </ul>
-
-
-
-
-
-  <form action="/urls/<%= shortURL %>/update" method="POST" style="margin:10px;">
-
-      <input id="longURL" type="text" name="longURL" placeholder="http://" style="width: 300px">
-
-      <input type="submit" value="Update">
-
-  </form>
-
+  </ol>
 
 </body>
+
 </html>

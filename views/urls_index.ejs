@@ -1,9 +1,17 @@
 
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <title>TinyApp</title>
+  <style>
+    body {background-color: powderblue;}
+    h4   {color: blue;}
+    p    {color: blue;}
+    a    {color: green;}
+  </style>
 </head>
+
 <body>
 
 
@@ -12,24 +20,36 @@
   </header>
 
 
+  <h4> These are your URLs: </h4>
 
-  <ul><% for(var key in urls){ %>
+
+  <ol><% for(var key in urls){ %>
 
     <li>
-    <form action="/urls/<%= key %>/delete" method="POST" style="margin:10px;">
-    <%= key %> : <%= urls[key].longURL %>
+    <form action="/urls/<%= key %>" method="POST" style="margin:10px;">
 
-    <span style="padding:10px;"><a href="urls/:id/update">Edit</a></span>
+    <div style="padding: 5px;"><%= key %> : <%= urls[key].longURL %></div>
 
-    <span style="padding:10px;"><button>Delete</button></span>
+    <span style="padding:10px;">Update or delete your URLs:</span>
+
+    <a href="urls/:id/update">Update URL</a>
+
+    <span>OR</span>
+
+    <button style="background-color: yellow; width: 70px;height:25px"><strong>Delete</strong></button>
+
+    <span>URL</span>
 
     </form>
     </li>
 
     <% }; %>
 
-  </ul>
+  </ol>
+
+  <a style="padding: 20px" href="/urls/new">Click here to add new URLs</a>
 
 </body>
+
 </html>
 

@@ -1,7 +1,16 @@
 
 <!DOCTYPE html>
 <html lang="en">
-  <head></head>
+
+  <head>
+    <title>TinyApp</title>
+    <style>
+    body {background-color: powderblue;}
+    h4   {color: blue;}
+    p    {color: blue;}
+    </style>
+  </head>
+
   <body style="font-size:20px; padding:50px;">
 
 
@@ -9,17 +18,20 @@
     <% include partials/_header %>
   </header>
 
+    <center><h4>Add a new URL to your database here:</h4></center>
 
-    <form action="/urls" method="POST" style="margin:150px;">
+    <form action="/urls" method="POST" style="margin:20px;">
 
-      <label for="longURL">Enter a URL:</label>
+      <center><label for="longURL">Enter a URL:</label>
 
-      <input id="longURL" type="text" name="longURL" placeholder="http://" style="width: 300px">
+      <input id="longURL" type="text" name="longURL" placeholder="http://" style="margin: 10px; width: 300px; height: 20px">
 
-      <input type="submit" value="Submit">
+      <span><button style="background-color: yellow; width: 80px;height:40px"><strong>ADD URL</strong></button></span>
+
+      </center>
 
     </form>
 
-
   </body>
+
 </html>
